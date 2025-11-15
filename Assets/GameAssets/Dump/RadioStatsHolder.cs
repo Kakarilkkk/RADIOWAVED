@@ -5,6 +5,12 @@ using UnityEngine;
 public class RadioStatsHolder : MonoBehaviour
 {
     // Start is called before the first frame update
+    public int firstController;
+    public int secondcontroller;
+
+    public int lampID;
+    public int antennaID;
+
     void Start()
     {
 
@@ -16,5 +22,5 @@ public class RadioStatsHolder : MonoBehaviour
 
     }
 
-    // Add reference to radioListener GO (switcher)
+    // Add reference to radioSwitcher GO (switcher)
 }
