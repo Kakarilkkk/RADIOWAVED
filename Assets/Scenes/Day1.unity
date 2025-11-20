@@ -1387,7 +1387,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2010320599}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.845351
+  m_Size: 0.8453509
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1753,7 +1753,7 @@ Transform:
   m_GameObject: {fileID: 689271757}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -9.54, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
