@@ -4,6 +4,8 @@ public class RoundController : MonoBehaviour
 {
     public GameObject secondObject;
 
+    public int value;
+
     public float minAngle = -90f;    // Минимальный угол
     public float maxAngle = 90f;     // Максимальный угол
     public float smoothSpeed = 5f;   // Скорость сглаживания поворота
@@ -80,7 +82,8 @@ public class RoundController : MonoBehaviour
         // Примагничиваем объект к этому углу
         transform.rotation = Quaternion.Euler(0, 0, targetAngle);
 
-        Debug.Log(AngleToInt(signedAngle));
+        Debug.Log(magnetizedValue);
+        value = magnetizedValue;
     }
 
     // Преобразование угла в целое число
