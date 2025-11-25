@@ -1,26 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Antenna : MonoBehaviour
 {
-    public int antennaID;
-    public void log() // on click
+    public int ID;
+
+    public Sprite UISprite;
+
+    void Start()
     {
-        Debug.Log(antennaID);
-        RadioSwicher.instance.antennaID = antennaID;
+        UISprite = GetComponent<Image>().sprite;
+    }
+
+    public void ChangeAntennaID()
+    {
+        Debug.Log(ID);
+        RadioSwicher.instance.antennaID = ID;
+
+// change sprite
+        GameObject radio = RadioSwicher.instance.gameObject;
+        GameObject antenna = radio.transform.Find("Antenna").gameObject;
+        antenna.GetComponent<SpriteRenderer>().sprite = UISprite;
+    }
+
+    public void ChangeBulbID()
+    {
+        Debug.Log(ID);
+        RadioSwicher.instance.lampID= ID;
         // change sprite
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
