@@ -5,7 +5,7 @@ public class Antenna : MonoBehaviour
 {
     public int ID;
 
-    public Sprite UISprite;
+ Sprite UISprite;
 
     void Start()
     {
@@ -27,7 +27,12 @@ public class Antenna : MonoBehaviour
     {
         Debug.Log(ID);
         RadioSwicher.instance.lampID= ID;
+
         // change sprite
+        GameObject radio = RadioSwicher.instance.gameObject;
+        GameObject bulb = radio.transform.Find("LightBulbBG").gameObject.transform.Find("LightBulb").gameObject;
+        bulb.GetComponent<SpriteRenderer>().sprite = UISprite;
+        Debug.Log(bulb);
     }
 
 }
