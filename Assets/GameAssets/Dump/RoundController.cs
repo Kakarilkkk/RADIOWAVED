@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RoundController : MonoBehaviour
@@ -10,6 +11,9 @@ public class RoundController : MonoBehaviour
     public float maxAngle = 90f;     // Максимальный угол
     public float smoothSpeed = 5f;   // Скорость сглаживания поворота
     public float movementRange = 5f; // Диапазон движения второго объекта по X
+    public float ofset = 3f;
+
+    public int sections = 7;
 
     private Camera cam;
     private bool isDragging = false; // Флаг, что мы перетаскиваем
@@ -50,7 +54,7 @@ public class RoundController : MonoBehaviour
             float angle01 = Mathf.InverseLerp(minAngle, maxAngle, signedAngle);
 
             // Двигаем второй объект
-            float x = Mathf.Lerp(-movementRange, movementRange, angle01);
+            float x = Mathf.Lerp(-movementRange + ofset, movementRange + ofset, angle01);
 
             secondObject.transform.position = new Vector3(
                 x,
@@ -58,6 +62,12 @@ public class RoundController : MonoBehaviour
                 secondObject.transform.position.z
             );
         }
+
+        // Debug.DrawLine(
+        // new Vector3(movementRange + ofset, transform.position.y, transform.position.z), 
+        // new Vector3(-movementRange + ofset, transform.position.y, transform.position.z), 
+        // Color.cyan
+        // );
     }
 
     // Этот метод срабатывает, когда мышь нажата на объект
@@ -77,7 +87,7 @@ public class RoundController : MonoBehaviour
             signedAngle -= 360f;
 
         int magnetizedValue = AngleToInt(signedAngle); // Получаем значение int
-        float targetAngle = Mathf.Lerp(minAngle, maxAngle, magnetizedValue / 5f); // Приводим к углу
+        float targetAngle = Mathf.Lerp(minAngle, maxAngle, magnetizedValue / sections); // Приводим к углу
 
         // Примагничиваем объект к этому углу
         transform.rotation = Quaternion.Euler(0, 0, targetAngle);
@@ -93,7 +103,7 @@ public class RoundController : MonoBehaviour
         float t = Mathf.InverseLerp(minAngle, maxAngle, angle);
 
         // Лерпим в диапазон 0..5 и округляем до целого
-        int value = Mathf.RoundToInt(Mathf.Lerp(0, 5, t));
+        int value = Mathf.RoundToInt(Mathf.Lerp(0, sections, t));
 
         return value;
     }

@@ -13,6 +13,7 @@ public class RadioSwicher : MonoBehaviour
     public GameObject metr;
     public GameObject controller1;
     public GameObject controller2;
+    public GameObject arrow;
 
     [Header("--------------Radio Stats----------------")]
     public int firstController;
@@ -51,13 +52,24 @@ public class RadioSwicher : MonoBehaviour
         }
 
         Listen();
+
+        arrow.GetComponent<Animator>().SetBool("CaughtTheWave", caughtTheWave);
     }
 
     void Listen()
     {
         foreach (GameObject wave in waves)
         {
-
+            if (
+                firstController == wave.GetComponent<WaveVars>().controller1 &&
+                secondController == wave.GetComponent<WaveVars>().controller2 &&
+                antennaID == wave.GetComponent<WaveVars>().antenna &&
+                lampID == wave.GetComponent<WaveVars>().bulb
+                )
+            {
+                caughtTheWave = true;
+            }
+            else caughtTheWave = false;
         }
     }
 }
