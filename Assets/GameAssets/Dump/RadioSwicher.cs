@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RadioSwicher : MonoBehaviour
@@ -22,13 +23,16 @@ public class RadioSwicher : MonoBehaviour
     public int antennaID;
 
     [Header("--------------Radio Switcher----------------")]
-    [SerializeField] bool caughtTheWave = false;
-    public GameObject[] waves;
+    public bool caughtTheWave = false;
+    public List<GameObject> waves;
+    public GameObject currentwave;
 
+    [Header("--------------UI----------------")]
+    public GameObject ListenButton;
 
     void Start()
     {
-
+        ListenButton.SetActive(false);
     }
 
 
@@ -44,10 +48,16 @@ public class RadioSwicher : MonoBehaviour
         switch (caughtTheWave)
         {
             case true:
+                ListenButton.SetActive(true);
 
+                if (currentwave != null)
+                ListenButton.GetComponent<DialogueTrigger>().inkJSON = currentwave.GetComponent<WaveVars>().inkJSON;
+                // set audio
                 break;
             case false:
-
+                ListenButton.SetActive(false);
+                ListenButton.GetComponent<DialogueTrigger>().inkJSON = null;
+                // unset audio
                 break;
         }
 
@@ -68,8 +78,14 @@ public class RadioSwicher : MonoBehaviour
                 )
             {
                 caughtTheWave = true;
+                currentwave = wave;
             }
-            else caughtTheWave = false;
+            else 
+            {
+                caughtTheWave = false;
+                currentwave = null;
+            }
+
         }
     }
 }

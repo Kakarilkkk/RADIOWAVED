@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class WaveVars : MonoBehaviour
 {
-    // ink file
+    public TextAsset inkJSON;
     // date check
 
     // listened waves bools
