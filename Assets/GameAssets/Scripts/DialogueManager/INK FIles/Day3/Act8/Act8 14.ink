@@ -1,0 +1,23 @@
+Record number three. That’s a success.
+
+We made a smart move and managed to convince the military to try the fertilizer themselves. Now they are completely under our control.
+
+This is a triumph of science over the soulless military machine.
+
+Damn, we have a siren…
+
+…
+
+Cursed! Apparently, they did the same and stabbed us in the back.
+
+Now the entire Research Institute is filled with... coughing...
+
+All the Research Institute is now under military control... cough...
+
+And they... cough... under control... cough-cough, what’s his... Our...
+
+Ironically... khehkh…
+
+End of record…
+EXTERNAL NextAct(functionName)
+~ NextAct("qwq")
