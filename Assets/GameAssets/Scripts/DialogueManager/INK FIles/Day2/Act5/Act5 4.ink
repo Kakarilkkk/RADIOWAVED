@@ -1,0 +1,6 @@
+This is Junior Lieutenant Sukhariev Petr speaking. I don’t know who is listening to me, but if someone is hearing me, I ask you very carefully to listen to everything I will say next.
+
+I overheard a conversation between Major-General Dolbaklyuvikov and someone from the Research Institute, and I realized that the explosion at the plant was planned by them to spread some kind of chemical virus, which apparently can take over people's minds. Damn... 
+I need to change my location... I will go on air as soon as I can...
+EXTERNAL NextAct(functionName)
+~ NextAct("qwq")
