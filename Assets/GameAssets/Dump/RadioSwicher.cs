@@ -24,8 +24,11 @@ public class RadioSwicher : MonoBehaviour
 
     [Header("--------------Radio Switcher----------------")]
     public bool caughtTheWave = false;
-    public List<GameObject> waves;
+    public List<GameObject> waves_In_Act1;
+    public List<GameObject> waves_In_Act2;
+    public List<GameObject> waves_In_Act3;
     public GameObject currentwave;
+    public TimeManager clock;
 
     [Header("--------------UI----------------")]
     public GameObject ListenButton;
@@ -61,14 +64,26 @@ public class RadioSwicher : MonoBehaviour
                 break;
         }
 
-        Listen();
+        switch (clock.act)
+        {
+            case 1:
+            Listen(waves_In_Act1);
+            break;
+            case 2:
+            Listen(waves_In_Act2);
+            break;
+            case 3:
+            Listen(waves_In_Act3);
+            break;
+        }
+        
 
         arrow.GetComponent<Animator>().SetBool("CaughtTheWave", caughtTheWave);
     }
 
-    void Listen()
+    void Listen(List<GameObject> wavesInAct)
     {
-        foreach (GameObject wave in waves)
+        foreach (GameObject wave in wavesInAct)
         {
             if (
                 firstController == wave.GetComponent<WaveVars>().controller1 &&

@@ -36,15 +36,13 @@ public class DialogueManager : MonoBehaviour
 
     public bool dialogueIsPlaying { get; private set; }
 
-    GameObject player;
+    
 
 
 
     // TAG VARS
     private const string SPEAKER_TAG = "speaker";
-    private const string PLAYER_SPRITE_TAG = "PlayerSprite";
-    private const string NPC_SPRITE_TAG = "NPCSprite";
-    private const string TALKING_INT = "talking";
+    private const string FUNCTION_TAG = "func";
     private const string AUDIO_TAG = "voice";
 
     //private DialogueVars dialogueVars;
@@ -127,6 +125,10 @@ public class DialogueManager : MonoBehaviour
         {
             //dialogueEvents.CallTheFunction(functionName); // call the void by its name
         });
+        currentStory.BindExternalFunction("NextAct", (string functionName) =>
+        {
+            FindAnyObjectByType<TimeManager>().NextAct(); // call the void by its name
+        });
 
         // reset the dialog window
         displayNameText.text = "";
@@ -147,7 +149,8 @@ public class DialogueManager : MonoBehaviour
 
         pickingUpObj.Invoke();
         //DialogueAudioManager.instance.SetCurrentAudioInfo(DialogueAudioManager.instance.defaultAudioInfo.id);
-        RadioSwicher.instance.waves.Remove(RadioSwicher.instance.currentwave);
+        
+        //RadioSwicher.instance.waves.Remove(RadioSwicher.instance.currentwave); // if i switch time, the list also switches, so it doesnt matter
         RadioSwicher.instance.currentwave = null;
         RadioSwicher.instance.ListenButton.SetActive(false);
         RadioSwicher.instance.caughtTheWave = false;
@@ -265,7 +268,9 @@ public class DialogueManager : MonoBehaviour
             // if not rich text, add the next letter and wait a small time
             else
             {
-                //DialogueAudioManager.instance.PlayDialogueSound(dialogueText.maxVisibleCharacters, dialogueText.text[dialogueText.maxVisibleCharacters]);
+                
+                DialogueAudioManager.instance.PlayDialogueSound(dialogueText.maxVisibleCharacters, dialogueText.text[dialogueText.maxVisibleCharacters]);
+                
                 dialogueText.maxVisibleCharacters++;
                 yield return new WaitForSeconds(typingSpeed);
             }
@@ -295,6 +300,11 @@ public class DialogueManager : MonoBehaviour
             {
                 case SPEAKER_TAG:
                     displayNameText.text = tagValue;
+                    break;
+
+                    case FUNCTION_TAG:
+                    TimeManager time = FindAnyObjectByType<TimeManager>();
+                    time.NextAct();
                     break;
                 // case PLAYER_SPRITE_TAG:
                 //     PlayerChangeSprite.Play(tagValue);

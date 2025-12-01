@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["#","^speaker:Station","/#","^Hello","\n","^Is Anyone There?","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["#","^speaker:Station","/#","^Hello","\n","^Is Anyone There?","\n","ev","str","^qwq","/str",{"x()":"NextAct","exArgs":1},"pop","/ev","\n",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}

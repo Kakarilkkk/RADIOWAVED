@@ -5,21 +5,22 @@ using UnityEngine;
 
 public class DialogueAudioManager : MonoBehaviour
 {
-    /*
     [Header("Audio")]
     public DialogueAudioInfoSO defaultAudioInfo;
     [SerializeField] private DialogueAudioInfoSO[] audioInfos;
     [SerializeField] private bool makePredictable;
     private DialogueAudioInfoSO currentAudioInfo;
     private Dictionary<string, DialogueAudioInfoSO> audioInfoDictionary;
-    private AudioSource audioSource;
+    public AudioSource audioSource;
     public static DialogueAudioManager instance;
+
 
     void Awake()
     {
         currentAudioInfo = defaultAudioInfo;
 
-        audioSource = this.gameObject.AddComponent<AudioSource>();
+
+        audioSource = GetComponent<AudioSource>();
 
         instance = this;
     }
@@ -111,5 +112,4 @@ public class DialogueAudioManager : MonoBehaviour
         }
     }
 
-*/
 }
