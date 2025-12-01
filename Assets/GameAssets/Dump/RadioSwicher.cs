@@ -36,6 +36,8 @@ public class RadioSwicher : MonoBehaviour
     void Start()
     {
         ListenButton.SetActive(false);
+
+        
     }
 
 
@@ -81,26 +83,26 @@ public class RadioSwicher : MonoBehaviour
         arrow.GetComponent<Animator>().SetBool("CaughtTheWave", caughtTheWave);
     }
 
-    void Listen(List<GameObject> wavesInAct)
+void Listen(List<GameObject> wavesInAct)
+{
+    caughtTheWave = false;
+    currentwave = null;
+
+    foreach (GameObject wave in wavesInAct)
     {
-        foreach (GameObject wave in wavesInAct)
+        if (!caughtTheWave)
         {
-            if (
-                firstController == wave.GetComponent<WaveVars>().controller1 &&
-                secondController == wave.GetComponent<WaveVars>().controller2 &&
-                antennaID == wave.GetComponent<WaveVars>().antenna &&
-                lampID == wave.GetComponent<WaveVars>().bulb
-                )
+            var vars = wave.GetComponent<WaveVars>();
+
+            if (firstController == vars.controller1 &&
+                secondController == vars.controller2 &&
+                antennaID == vars.antenna &&
+                lampID == vars.bulb)
             {
                 caughtTheWave = true;
                 currentwave = wave;
             }
-            else 
-            {
-                caughtTheWave = false;
-                currentwave = null;
-            }
-
         }
     }
+}
 }

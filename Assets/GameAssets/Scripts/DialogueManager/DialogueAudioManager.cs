@@ -9,7 +9,7 @@ public class DialogueAudioManager : MonoBehaviour
     public DialogueAudioInfoSO defaultAudioInfo;
     [SerializeField] private DialogueAudioInfoSO[] audioInfos;
     [SerializeField] private bool makePredictable;
-    private DialogueAudioInfoSO currentAudioInfo;
+    public DialogueAudioInfoSO currentAudioInfo;
     private Dictionary<string, DialogueAudioInfoSO> audioInfoDictionary;
     public AudioSource audioSource;
     public static DialogueAudioManager instance;

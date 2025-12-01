@@ -115,6 +115,8 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
+        DialogueAudioManager.instance.currentAudioInfo = RadioSwicher.instance.currentwave.GetComponent<WaveVars>().sound;
+
         //dialogueVars.StartListenting(currentStory);
 
         currentStory.BindExternalFunction("doUnityEvent", (string eventName) =>
@@ -148,7 +150,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = ""; // resets the texts in the box
 
         pickingUpObj.Invoke();
-        //DialogueAudioManager.instance.SetCurrentAudioInfo(DialogueAudioManager.instance.defaultAudioInfo.id);
+        DialogueAudioManager.instance.SetCurrentAudioInfo(DialogueAudioManager.instance.defaultAudioInfo.id);
         
         //RadioSwicher.instance.waves.Remove(RadioSwicher.instance.currentwave); // if i switch time, the list also switches, so it doesnt matter
         RadioSwicher.instance.currentwave = null;

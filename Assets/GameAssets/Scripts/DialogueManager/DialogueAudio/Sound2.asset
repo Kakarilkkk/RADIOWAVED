@@ -17,5 +17,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 480dcd1c0a2ed064fb8b0f5a6feeeb47, type: 3}
   frequencyLevel: 2
   minPitch: 0.5
-  maxPitch: 3
+  maxPitch: 1
   stopAudioSource: 1
