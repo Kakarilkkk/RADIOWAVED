@@ -44,3 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d74fc8a86dac0194e895b26350800705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inkJSON: {fileID: 0}
+  sound: {fileID: 11400000, guid: bb6d390c826747a4ba2d9591f83bdd82, type: 2}
+  controller1: 5
+  controller2: 5
+  antenna: 4
+  bulb: 5

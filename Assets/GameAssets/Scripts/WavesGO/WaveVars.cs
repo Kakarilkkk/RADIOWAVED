@@ -3,9 +3,8 @@ using UnityEngine;
 public class WaveVars : MonoBehaviour
 {
     public TextAsset inkJSON;
-    // date check
 
-    // listened waves bools
+    public DialogueAudioInfoSO sound;
 
     public int controller1 = 5;
 

@@ -212,7 +212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2146811622198687733, guid: ecbeb7a63d43d0243a36eb646f26665c, type: 3}
       propertyPath: m_text
-      value: 1. Radio station for beginner radio amateurs
+      value: Radio station for beginner radio amateurs
       objectReference: {fileID: 0}
     - target: {fileID: 4842823850776622057, guid: ecbeb7a63d43d0243a36eb646f26665c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -221,6 +221,10 @@ PrefabInstance:
     - target: {fileID: 5857993402664025256, guid: ecbeb7a63d43d0243a36eb646f26665c, type: 3}
       propertyPath: m_Name
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857993402664025256, guid: ecbeb7a63d43d0243a36eb646f26665c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6330099179732939677, guid: ecbeb7a63d43d0243a36eb646f26665c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1104,6 +1108,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2146811622198687733, guid: ecbeb7a63d43d0243a36eb646f26665c, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4842823850776622057, guid: ecbeb7a63d43d0243a36eb646f26665c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 25.900024
@@ -1114,7 +1122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5857993402664025256, guid: ecbeb7a63d43d0243a36eb646f26665c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6330099179732939677, guid: ecbeb7a63d43d0243a36eb646f26665c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1844,6 +1852,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8801895164237795211, guid: a683e04fc99abb34f90ccb0203f3cbda, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 11400000, guid: bb6d390c826747a4ba2d9591f83bdd82, type: 2}
+    - target: {fileID: 8801895164237795211, guid: a683e04fc99abb34f90ccb0203f3cbda, type: 3}
       propertyPath: antenna
       value: 2
       objectReference: {fileID: 0}
@@ -1921,7 +1933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3574,14 +3586,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2146811622198687733, guid: ecbeb7a63d43d0243a36eb646f26665c, type: 3}
       propertyPath: m_text
-      value: '1. Wave 2
-
-
-'
+      value: "\u0421onversation between liquidators at the plant\n"
       objectReference: {fileID: 0}
     - target: {fileID: 2788051007981541548, guid: ecbeb7a63d43d0243a36eb646f26665c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4356766074950504084, guid: ecbeb7a63d43d0243a36eb646f26665c, type: 3}
       propertyPath: m_IsActive
